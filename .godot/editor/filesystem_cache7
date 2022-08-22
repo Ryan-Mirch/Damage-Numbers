@@ -1,0 +1,7 @@
+0b7126e0c6e86d3ec295a72f5aa6e0bd
+::res://::1661144184
+2d_demo.gd::GDScript::-1::1661143855::0::1::::<>Node2D<>::
+2d_demo.tscn::PackedScene::1936010320837809382::1661143747::0::1::::<><>::res://2d_demo.gd
+Damage_Number_2D.gd::GDScript::-1::1661144152::0::1::::DamageNumber2D<>Node2D<>::
+Damage_Number_2D.tscn::PackedScene::282979083104941772::1661144173::0::1::::<><>::res://Damage_Number_2D.gd
+icon.png::CompressedTexture2D::2650952186485200189::1661141405::1661141411::1::::<><>::
