@@ -1,6 +1,7 @@
+Sprite2D
+Label
 TextureRect
 Control
-Label
 HBoxContainer
 HSlider
 VBoxContainer

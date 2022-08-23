@@ -1,7 +1,7 @@
 extends Control
 
 @onready var spawn_point = %SpawnPoint
-@onready var damage_number_2d_template = load("res://Damage_Number_2D.tscn")
+@onready var damage_number_2d_template = preload("res://Damage_Number_2D.tscn")
 @onready var spread_value:Label = %"Spread Value"
 @onready var height_value:Label = %"Height Value"
 
@@ -12,14 +12,14 @@ var rmb_held = false
 func _ready() -> void:
 	pass # Replace with function body.
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if rmb_held:
 		spawn_damage_number(randf_range(0,10))
 
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Left Click"):
-		spawn_damage_number(randf_range(0,10))
+		spawn_damage_number(randf_range(0,1000))
 		
 	if event.is_action_pressed("Right Click"):
 		rmb_held = true
@@ -48,9 +48,6 @@ func get_damage_number() -> DamageNumber2D:
 		new_damage_number.tree_exiting.connect(
 			func():damage_number_2d_pool.append(new_damage_number))
 		return new_damage_number
-		
-	
-		
 
 
 func _on_spread_value_changed(value: float) -> void:

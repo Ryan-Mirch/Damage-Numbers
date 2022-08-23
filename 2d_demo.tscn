@@ -36,16 +36,16 @@ offset_top = 18.0
 offset_right = 581.0
 offset_bottom = 113.0
 
-[node name="Label" type="Label" parent="VBoxContainer"]
-offset_right = 565.0
+[node name="Controls" type="Label" parent="VBoxContainer"]
+offset_right = 622.0
 offset_bottom = 35.0
 size_flags_vertical = 1
-text = "Left or Hold Right Click to Spawn Damage Numbers"
+text = "Left Click or Hold Right Click to Spawn Damage Numbers"
 label_settings = SubResource("LabelSettings_bltxw")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 offset_top = 39.0
-offset_right = 565.0
+offset_right = 622.0
 offset_bottom = 65.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
@@ -57,24 +57,24 @@ text = "Spread"
 unique_name_in_owner = true
 offset_left = 59.0
 offset_top = 5.0
-offset_right = 531.0
+offset_right = 588.0
 offset_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 300.0
+max_value = 1000.0
 step = 0.1
 
 [node name="Spread Value" type="Label" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 0)
-offset_left = 535.0
-offset_right = 565.0
+offset_left = 592.0
+offset_right = 622.0
 offset_bottom = 26.0
 text = "0"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 offset_top = 69.0
-offset_right = 565.0
+offset_right = 622.0
 offset_bottom = 95.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
@@ -86,19 +86,19 @@ text = "Height"
 unique_name_in_owner = true
 offset_left = 56.0
 offset_top = 5.0
-offset_right = 531.0
+offset_right = 588.0
 offset_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 500.0
+max_value = 1000.0
 step = 0.1
 value = 100.0
 
 [node name="Height Value" type="Label" parent="VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 0)
-offset_left = 535.0
-offset_right = 565.0
+offset_left = 592.0
+offset_right = 622.0
 offset_bottom = 26.0
 text = "100"
 

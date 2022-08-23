@@ -24,28 +24,34 @@ tracks/1/keys = {
 "points": PackedFloat32Array(2, -0.25, 0, 0.25, 0, 1),
 "times": PackedFloat32Array(0)
 }
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LabelContainer:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_lhokx"]
 resource_name = "Rise and Fade"
 step = 0.05
-tracks/0/type = "method"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
+tracks/0/path = NodePath("LabelContainer:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"remove"
-}]
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 2, -0.25, 0, 0.25, 0, 1, 2, -0.25, 0, 0.25, 0, 1, 0.8, -0.25, 0, 0.25, 0, 1),
+"times": PackedFloat32Array(0, 0.3, 0.35, 1)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("LabelContainer:scale:x")
+tracks/1/path = NodePath("LabelContainer:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -55,22 +61,26 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("LabelContainer:scale:y")
+tracks/2/path = NodePath("LabelContainer:modulate:a")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 2, -0.25, 0, 0.25, 0, 1, 2, -0.25, 0, 0.25, 0, 1, 0.8, -0.25, 0, 0.25, 0, 1),
-"times": PackedFloat32Array(0, 0.3, 0.35, 1)
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 1, -0.25, 0, 0.25, 0, 1, 1, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"times": PackedFloat32Array(0, 0.15, 0.35, 1)
 }
-tracks/3/type = "bezier"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("LabelContainer:modulate:a")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 1, -0.25, 0, 0.25, 0, 1, 1, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
-"times": PackedFloat32Array(0, 0.2, 0.35, 1)
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"remove"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_np4dl"]
@@ -96,7 +106,6 @@ libraries = {
 
 [node name="LabelContainer" type="Node2D" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0)
 position = Vector2(0, -40)
 scale = Vector2(2, 2)
 
