@@ -1,29 +1,106 @@
-[gd_scene load_steps=3 format=3 uid="uid://2t22pbojmsqo"]
+[gd_scene load_steps=4 format=3 uid="uid://2t22pbojmsqo"]
 
 [ext_resource type="Script" path="res://2d_demo.gd" id="1_r2qex"]
+[ext_resource type="Texture2D" uid="uid://4hkfc3gvyrhf" path="res://Circuit pattern.png" id="2_6qjxd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bltxw"]
-font_size = 30
+font_size = 23
 
-[node name="2D Demo" type="Node2D"]
+[node name="2D Demo" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource("1_r2qex")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 257.0
-offset_top = 154.0
-offset_right = 508.0
-offset_bottom = 180.0
-scale = Vector2(0.5, 0.5)
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_6qjxd")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="SpawnPoint" type="Control" parent="."]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -125.0
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_layout_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 16.0
+offset_top = 18.0
+offset_right = 581.0
+offset_bottom = 113.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+offset_right = 565.0
+offset_bottom = 35.0
 size_flags_vertical = 1
-text = "Click to spawn damage numbers"
+text = "Left or Hold Right Click to Spawn Damage Numbers"
 label_settings = SubResource("LabelSettings_bltxw")
 
-[node name="SpawnPoint" type="Position2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(507, 404)
-gizmo_extents = 110.7
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+offset_top = 39.0
+offset_right = 565.0
+offset_bottom = 65.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(505, 294)
-current = true
-zoom = Vector2(2, 2)
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+offset_right = 55.0
+offset_bottom = 26.0
+text = "Spread"
+
+[node name="Spread" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+offset_left = 59.0
+offset_top = 5.0
+offset_right = 531.0
+offset_bottom = 21.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 300.0
+step = 0.1
+
+[node name="Spread Value" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+offset_left = 535.0
+offset_right = 565.0
+offset_bottom = 26.0
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+offset_top = 69.0
+offset_right = 565.0
+offset_bottom = 95.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+offset_right = 52.0
+offset_bottom = 26.0
+text = "Height"
+
+[node name="Height" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+offset_left = 56.0
+offset_top = 5.0
+offset_right = 531.0
+offset_bottom = 21.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 500.0
+step = 0.1
+value = 100.0
+
+[node name="Height Value" type="Label" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+offset_left = 535.0
+offset_right = 565.0
+offset_bottom = 26.0
+text = "100"
+
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/Spread" to="." method="_on_spread_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer2/Height" to="." method="_on_height_value_changed"]

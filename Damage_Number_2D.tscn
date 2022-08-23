@@ -70,7 +70,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 1, -0.25, 0, 0.25, 0, 1, 1, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
-"times": PackedFloat32Array(0, 0.2, 0.5, 1)
+"times": PackedFloat32Array(0, 0.2, 0.35, 1)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_np4dl"]
@@ -96,7 +96,7 @@ libraries = {
 
 [node name="LabelContainer" type="Node2D" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.308865)
+modulate = Color(1, 1, 1, 0)
 position = Vector2(0, -40)
 scale = Vector2(2, 2)
 
@@ -116,6 +116,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
 text = "123"
 label_settings = SubResource("LabelSettings_ygtpk")
 horizontal_alignment = 1
